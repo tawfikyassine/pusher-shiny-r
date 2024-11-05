@@ -10,7 +10,7 @@ pusher_key <- "YOUR_APP_KEY"
 pusher_secret <- "YOUR_APP_SECRET"
 pusher_cluster <- "YOUR_APP_CLUSTER"
 
-# this will come from shiny proxy
+# make any channel name like public.username
 pusher_channel <- "any-channel-name"
 
 # Function to send an event using the Pusher REST API
