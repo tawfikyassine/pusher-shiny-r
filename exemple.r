@@ -94,9 +94,11 @@ ui <- fluidPage(
 
 server <- function(input, output, session) {
   observeEvent(input$send_event, {
-    # empty data
+    # data is optional
+    # by default it is :
     data <- list()
-    data <- list(message = "hi how are you")
+    #but you can pass any data you want to the client side like :
+    data <- list(message = "hi how are you", test = TRUE, my_best_variable=":)")
     # Trigger event via Pusher REST API
     send_pusher_event(event_name= "any-event-name", data)
   })
