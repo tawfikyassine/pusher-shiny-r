@@ -48,7 +48,15 @@ server <- function(input, output, session) {
     #but you can pass any data you want to the client side like :
     data <- list(message = "hi how are you", test = TRUE, my_best_variable=":)")
     # Trigger event via Pusher REST API
-    send_pusher_event(event_name= "any-event-name", data)
+    send_pusher_event(
+      cluster = pusher$cluster,
+      app_id = pusher$app_id,
+      key = pusher$key,
+      secret = pusher$secret,
+      channel = pusher$channel,
+      event_name= "any-event-name", # Example event name
+      list_data = data  # Example data
+    )
   })
 }
 
