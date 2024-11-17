@@ -47,11 +47,9 @@ send_pusher_event <- function(cluster, app_id, key, secret, channel, event_name 
   
   # Check the response status
   if (http_status(response)$category == "Success") {
-    cat("Request successful!\n")
-    print(content(response, "text"))
     return(TRUE)
   } else {
-    cat("Request failed with status:", http_status(response)$message, "\n")
+    cat("Pusher Request failed with status:", http_status(response)$message, "\n")
     print(content(response, "text"))
     return(FALSE)
   }
